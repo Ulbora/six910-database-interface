@@ -21,4 +21,3 @@ package six910dbi
 */
 
 // go mod init github.com/Ulbora/six910-database-interface
-
