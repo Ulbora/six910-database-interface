@@ -232,7 +232,7 @@ type Six910DB interface {
 	GetLocalDatastore(storeID int64, dataStoreName string) *LocalDataStore
 
 	//---------------------start instance--------------------
-	// this gets call when each instanse is started and added only if never added before
+	// this gets called when each instance is started and added only if never added before
 	//The instance name is pulled from Docker or an manually entered env variable
 	AddInstance(i *Instances) bool
 
