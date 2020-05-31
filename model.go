@@ -129,6 +129,14 @@ type Category struct {
 	ParentCategoryID int64  `json:"parentCategoryId"`
 }
 
+//ShippingCarrier ShippingCarrier
+type ShippingCarrier struct {
+	ID      int64  `json:"id"`
+	Carrier string `json:"carrier"`
+	Type    string `json:"type"`
+	StoreID int64  `json:"storeId"`
+}
+
 //ShippingMethod ShippingMethod
 type ShippingMethod struct {
 	ID                int64   `json:"id"`
@@ -244,48 +252,6 @@ type ProductCategory struct {
 	ProductID  int64 `json:"productId"`
 }
 
-//Shipment Shipment
-type Shipment struct {
-	ID               int64     `json:"id"`
-	Status           string    `json:"status"`
-	Boxes            int64     `json:"boxes"`
-	ShippingHandling float64   `json:"shippingHandling"`
-	Insurance        float64   `json:"insurance"`
-	CreateDate       time.Time `json:"createDate"`
-	Updated          time.Time `json:"updated"`
-	OrderID          int64     `json:"orderId"`
-}
-
-//ShipmentBox ShipmentBox
-type ShipmentBox struct {
-	ID                int64     `json:"id"`
-	BoxNumber         int64     `json:"boxNumber"`
-	Dropship          bool      `json:"dropship"`
-	Cost              float64   `json:"cost"`
-	Insurance         float64   `json:"insurance"`
-	Weight            float64   `json:"weight"`
-	Width             float64   `json:"width"`
-	Height            float64   `json:"height"`
-	Depth             float64   `json:"depth"`
-	TrackingNumber    string    `json:"trackingNumber"`
-	ShippingAddress   string    `json:"shippingAddress"`
-	ShipDate          time.Time `json:"shipDate"`
-	Updated           time.Time `json:"updated"`
-	ShippingMethodID  int64     `json:"shippingMethodId"`
-	ShippingAddressID int64     `json:"shippingAddressId"`
-	ShipmentID        int64     `json:"shipmentId"`
-}
-
-//ShipmentItem ShipmentItem
-type ShipmentItem struct {
-	ID            int64     `json:"id"`
-	Quantity      int64     `json:"quantity"`
-	Updated       time.Time `json:"updated"`
-	OrderItemID   int64     `json:"orderItemId"`
-	ShipmentBoxID int64     `json:"shipmentBoxId"`
-	ShipmentID    int64     `json:"shippingId"`
-}
-
 //Plugins Plugins
 type Plugins struct {
 	ID               int64   `json:"id"`
@@ -333,12 +299,46 @@ type PaymentGateway struct {
 	StorePluginsID int64  `json:"storePluginsId"`
 }
 
-//ShippingCarrier ShippingCarrier
-type ShippingCarrier struct {
-	ID      int64  `json:"id"`
-	Carrier string `json:"carrier"`
-	Type    string `json:"type"`
-	StoreID int64  `json:"storeId"`
+//Shipment Shipment
+type Shipment struct {
+	ID               int64     `json:"id"`
+	Status           string    `json:"status"`
+	Boxes            int64     `json:"boxes"`
+	ShippingHandling float64   `json:"shippingHandling"`
+	Insurance        float64   `json:"insurance"`
+	CreateDate       time.Time `json:"createDate"`
+	Updated          time.Time `json:"updated"`
+	OrderID          int64     `json:"orderId"`
+}
+
+//ShipmentBox ShipmentBox
+type ShipmentBox struct {
+	ID                int64     `json:"id"`
+	BoxNumber         int64     `json:"boxNumber"`
+	Dropship          bool      `json:"dropship"`
+	Cost              float64   `json:"cost"`
+	Insurance         float64   `json:"insurance"`
+	Weight            float64   `json:"weight"`
+	Width             float64   `json:"width"`
+	Height            float64   `json:"height"`
+	Depth             float64   `json:"depth"`
+	TrackingNumber    string    `json:"trackingNumber"`
+	ShippingAddress   string    `json:"shippingAddress"`
+	ShipDate          time.Time `json:"shipDate"`
+	Updated           time.Time `json:"updated"`
+	ShippingMethodID  int64     `json:"shippingMethodId"`
+	ShippingAddressID int64     `json:"shippingAddressId"`
+	ShipmentID        int64     `json:"shipmentId"`
+}
+
+//ShipmentItem ShipmentItem
+type ShipmentItem struct {
+	ID            int64     `json:"id"`
+	Quantity      int64     `json:"quantity"`
+	Updated       time.Time `json:"updated"`
+	OrderItemID   int64     `json:"orderItemId"`
+	ShipmentBoxID int64     `json:"shipmentBoxId"`
+	ShipmentID    int64     `json:"shippingId"`
 }
 
 //Order Order

@@ -21,3 +21,233 @@ package six910dbi
 */
 
 // go mod init github.com/Ulbora/six910-database-interface
+
+//Six910DB Six910DB
+type Six910DB interface {
+	//sets security level to local or oauth using GoAuth2
+	AddSecurity(s *Security) (bool, int64)
+	UpdateSecurity(s *Security) bool
+	GetSecurity() *Security
+	DeleteSecurity() bool
+
+	//stores
+	AddStore(s *Store) (bool, int64)
+	UpdateStore(s *Store) bool
+	GetStore(sname string) *Store
+	GetStoreID(id int64) *Store
+	GetStoreByLocal(localDomain string) *Store
+	DeleteStore(id int64) bool
+
+	//customer
+	AddCustomer(c *Customer) (bool, int64)
+	UpdateCustomer(c *Customer) bool
+	GetCustomer(email string) *Customer
+	GetCustomerID(id int64) *Customer
+	DeleteCustomer(id int64) bool
+
+	//Local Accounts when oauth not used
+	AddLocalAccount(a *LocalAccount) bool
+	UpdateLocalAccount(a *LocalAccount) bool
+	GetLocalAccount(username string, storeID int64) *LocalAccount
+	GetLocalAccountList(store int64) *[]LocalAccount
+	DeleteLocalAccount(username string, storeID int64) bool
+
+	//distributors
+	AddDistributor(d *Distributor) (bool, int64)
+	UpdateDistributor(d *Distributor) bool
+	GetDistributor(id int64) *Distributor
+	GetDistributorList(store int64) *[]Distributor
+	DeleteDistributor(id int64) bool
+
+	//Cart
+	AddCart(c *Cart) (bool, int64)
+	UpdateCart(c *Cart) bool
+	GetCart(cid int64) *Cart
+	DeleteCart(id int64) bool
+
+	//cart item
+	AddCartItem(ci *CartItem) (bool, int64)
+	UpdateCartItem(ci *CartItem) bool
+	GetCarItem(cartID int64, prodID int64) *CartItem
+	GetCartItemList(cartID int64) *[]CartItem
+	DeleteCartItem(id int64) bool
+
+	//address
+	AddAddress(a *Address) (bool, int64)
+	UpdateAddress(a *Address) bool
+	GetAddress(id int64) *Address
+	GetAddressList(cid int64) *[]Address
+	DeleteAddress(id int64) bool
+
+	//category
+	AddCategory(c *Category) (bool, int64)
+	UpdateCategory(c *Category) bool
+	GetCategory(id int64) *Category
+	GetCategoryList(storeID int64) *[]Category
+	DeleteCategory(id int64) bool
+
+	//shipping method
+	AddShippingMethod(s *ShippingMethod) (bool, int64)
+	UpdateShippingMethod(s *ShippingMethod) bool
+	GetShippingMethod(id int64) *ShippingMethod
+	GetShippingMethodList(storeID int64) *[]ShippingMethod
+	DeleteShippingMethod(id int64) bool
+
+	//shipping insurance
+	AddInsurance(i *Insurance) (bool, int64)
+	UpdateInsurance(i *Insurance) bool
+	GetInsurance(id int64) *Insurance
+	GetInsuranceList(storeID int64) *[]Insurance
+	DeleteInsurance(id int64) bool
+
+	//product
+	AddProduct(p *Product) (bool, int64)
+	UpdateProduct(p *Product) bool
+	GetProductByID(id int64) *Product
+	GetProductsByName(name string, start int64, end int64) *[]Product
+	GetProductsByCaterory(catID int64, start int64, end int64) *[]Product
+	GetProductList(storeID int64, start int64, end int64) *[]Product
+	DeleteProduct(id int64) bool
+
+	//Geographic Regions
+	AddRegion(r *Region) (bool, int64)
+	UpdateRegion(r *Region) bool
+	GetRegion(id int64) *Region
+	GetRegionList(storeID int64) *[]Region
+	DeleteRegion(id int64) bool
+
+	//Geographic Sub Regions
+	AddSubRegion(s *SubRegion) (bool, int64)
+	UpdateSubRegion(s *SubRegion) bool
+	GetSubRegion(id int64) *SubRegion
+	GetSubRegionList(regionID int64) *[]SubRegion
+	DeleteSubRegion(id int64) bool
+
+	//excluded sub regions
+	AddExcludedSubRegion(e *ExcludedSubRegion) (bool, int64)
+	UpdateExcludedSubRegion(e *ExcludedSubRegion) bool
+	GetExcludedSubRegion(id int64) *ExcludedSubRegion
+	GetExcludedSubRegionList(regionID int64) *[]ExcludedSubRegion
+	DeleteExcludedSubRegion(id int64) bool
+
+	//included sub regions
+	AddIncludedSubRegion(e *IncludedSubRegion) (bool, int64)
+	UpdateIncludedSubRegion(e *IncludedSubRegion) bool
+	GetIncludedSubRegion(id int64) *IncludedSubRegion
+	GetIncludedSubRegionList(regionID int64) *[]IncludedSubRegion
+	DeleteIncludedSubRegion(id int64) bool
+
+	//limit exclusions and inclusions to a zip code
+	AddZoneZip(z *ZoneZip) (bool, int64)
+	GetZoneZipListByExclusion(exID int64) *[]ZoneZip
+	GetZoneZipListByInclusion(incID int64) *[]ZoneZip
+	DeleteZoneZip(id int64) bool
+
+	//product category
+	AddProductCategory(pc *ProductCategory) bool
+	DeleteProductCategory(pc *ProductCategory) bool
+
+	//Orders
+	AddOrder(o *Order) (bool, int64)
+	UpdateOrder(o *Order) bool
+	GetOrder(id int64) *Order
+	GetOrderList(cid int64) *[]Order
+	DeleteOrder(id int64) bool
+
+	//Order Items
+	AddOrderItem(i *OrderItem) (bool, int64)
+	UpdateOrderItem(i *OrderItem) bool
+	GetOrderItem(id int64) *OrderItem
+	GetOrderItemList(orderID int64) *[]OrderItem
+	DeleteOrderItem(id int64) bool
+
+	//Order Comments
+	AddOrderComments(c *OrderComment) (bool, int64)
+	GetOrderCommentList(orderID int64) *[]OrderComment
+
+	//Order Payment Transactions
+	AddOrderTransaction(t *OrderTransaction) (bool, int64)
+	GetOrderTransactionList(orderID int64) *[]OrderTransaction
+
+	//shipment
+	AddShipment(s *Shipment) (bool, int64)
+	UpdateShipment(s *Shipment) bool
+	GetShipment(id int64) *Shipment
+	GetShipmentList(orderID int64) *[]Shipment
+	DeleteShipment(id int64) *Shipment
+
+	//shipment boxes
+	AddShipmentBox(sb *ShipmentBox) (bool, int64)
+	UpdateShipmentBox(sb *ShipmentBox) bool
+	GetShipmentBox(id int64) *ShipmentBox
+	GetShipmentBoxList(shipmentID int64) *[]ShipmentBox
+	DeleteShipmentBox(id int64) bool
+
+	//Shipment Items in box
+	AddShipmentItem(si *ShipmentItem) (bool, int64)
+	UpdateShipmentItem(si *ShipmentItem) bool
+	GetShipmentItem(id int64) *ShipmentItem
+	GetShipmentItemList(shipmentID int64) *[]ShipmentItem
+	DeleteShipmentItem(id int64) bool
+
+	//Global Plugins
+	AddPlugin(p *Plugins) (bool, int64)
+	UpdatePlugin(p *Plugins) bool
+	GetPlugin(id int64) *Plugins
+	GetPluginList(start int64, end int64) *[]Plugins
+	DeletePlugin(id int64) bool
+
+	//store plugins installed
+	AddStorePlugin(sp *StorePlugins) (bool, int64)
+	UpdateStorePlugin(sp *StorePlugins) bool
+	GetStorePlugin(id int64) *StorePlugins
+	GetStorePluginList(storeID int64) *[]StorePlugins
+	DeleteStorePlugin(id int64) bool
+
+	//Plugins that are payment gateways
+	AddPaymentGateway(pgw *PaymentGateway) (bool, int64)
+	UpdatePaymentGateway(pgw *PaymentGateway) bool
+	GetPaymentGateways(storeID int64) *[]PaymentGateway
+	DeletePaymentGateway(id int64) bool
+
+	//store shipment carrier like UPS and FEDex
+	AddShippingCarrier(c *ShippingCarrier) (bool, int64)
+	UpdateShippingCarrier(c *ShippingCarrier) bool
+	GetShippingCarrierList(storeID int64) *[]ShippingCarrier
+	DeleteShippingCarrier(id int64) bool
+
+	//----UI Cluster installation: this is only called if UI is running in a cluster---
+	//Handle the situation where clients are running in a cluster
+	//This gives a way to make sure the json datastores are update on each node in the cluster
+
+	//----------------start datastore------------------------------------
+	//this gets called when a node start up and add only if it doesn't already exist
+	AddLocalDatastore(d *LocalDataStore) bool
+
+	//This get get called when a change is made to a datastore from a node in the cluster
+	//Or after all reloads have completed and then get set to Reload = false
+	UpdateLocalDatastore(d *LocalDataStore) bool
+
+	//This gets call by cluster nodes to see if there are pending reload
+	GetLocalDatastore(storeID int64, dataStoreName string) *LocalDataStore
+
+	//---------------------start instance--------------------
+	// this gets call when each instanse is started and added only if never added before
+	//The instance name is pulled from Docker or an manually entered env variable
+	AddInstance(i *Instances) bool
+
+	//This gets called after instance gets reloaded
+	UpdateInstance(i *Instances) bool
+
+	//Gets called before updating an instance
+	GetInstance(name string, dataStoreName string, storeID int64) *Instances
+
+	//-------------------start write lock-------------
+	//gets called after UI makes changes to one of the datastores
+	//If the datastore already exists, the Update method is called from within add
+	AddDataStoreWriteLock(w *DataStoreWriteLock) (bool, int64)
+	UpdateDataStoreWriteLock(w *DataStoreWriteLock) bool
+
+	//gets called from within the add method and by any node trying to update a datastore
+	GetDataStoreWriteLock(dataStore string, storeID int64) *DataStoreWriteLock
+}
