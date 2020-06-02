@@ -48,6 +48,7 @@ type Store struct {
 	StoreSlogan   string    `json:"storeSlogan"`
 	Logo          string    `json:"logo"`
 	Currency      string    `json:"currency"`
+	Enabled       bool      `json:"enabled"`
 }
 
 //Customer Customer
