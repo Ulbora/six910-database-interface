@@ -85,6 +85,7 @@ type Six910DB interface {
 	UpdateCategory(c *Category) bool
 	GetCategory(id int64) *Category
 	GetCategoryList(storeID int64) *[]Category
+	GetSubCategoryList(catID int64) *[]Category
 	DeleteCategory(id int64) bool
 
 	//shipping method
