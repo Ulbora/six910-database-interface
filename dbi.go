@@ -176,7 +176,7 @@ type Six910DB interface {
 	UpdateShipment(s *Shipment) bool
 	GetShipment(id int64) *Shipment
 	GetShipmentList(orderID int64) *[]Shipment
-	DeleteShipment(id int64) *Shipment
+	DeleteShipment(id int64) bool
 
 	//shipment boxes
 	AddShipmentBox(sb *ShipmentBox) (bool, int64)
