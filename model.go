@@ -94,6 +94,8 @@ type Cart struct {
 	ID          int64     `json:"id"`
 	StoreID     int64     `json:"storeId"`
 	CustomerID  int64     `json:"customerId"`
+	IPAddress   string    `json:"ipAddress"`
+	UserInfo    string    `json:"userInfo"`
 	DateEntered time.Time `json:"entered"`
 	DateUpdated time.Time `json:"updated"`
 }
