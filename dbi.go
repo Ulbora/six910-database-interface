@@ -211,12 +211,14 @@ type Six910DB interface {
 	//Plugins that are payment gateways
 	AddPaymentGateway(pgw *PaymentGateway) (bool, int64)
 	UpdatePaymentGateway(pgw *PaymentGateway) bool
+	GetPaymentGateway(id int64) *PaymentGateway
 	GetPaymentGateways(storeID int64) *[]PaymentGateway
 	DeletePaymentGateway(id int64) bool
 
 	//store shipment carrier like UPS and FEDex
 	AddShippingCarrier(c *ShippingCarrier) (bool, int64)
 	UpdateShippingCarrier(c *ShippingCarrier) bool
+	GetShippingCarrier(id int64) *ShippingCarrier
 	GetShippingCarrierList(storeID int64) *[]ShippingCarrier
 	DeleteShippingCarrier(id int64) bool
 
