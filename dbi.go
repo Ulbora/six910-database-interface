@@ -107,7 +107,7 @@ type Six910DB interface {
 	AddProduct(p *Product) (bool, int64)
 	UpdateProduct(p *Product) bool
 	GetProductByID(id int64) *Product
-	GetProductsByName(name string, start int64, end int64) *[]Product
+	GetProductsByName(name string, storeID int64, start int64, end int64) *[]Product
 	GetProductsByCaterory(catID int64, start int64, end int64) *[]Product
 	GetProductList(storeID int64, start int64, end int64) *[]Product
 	DeleteProduct(id int64) bool
@@ -154,7 +154,7 @@ type Six910DB interface {
 	AddOrder(o *Order) (bool, int64)
 	UpdateOrder(o *Order) bool
 	GetOrder(id int64) *Order
-	GetOrderList(cid int64) *[]Order
+	GetOrderList(cid int64, storeID int64) *[]Order
 	DeleteOrder(id int64) bool
 
 	//Order Items
