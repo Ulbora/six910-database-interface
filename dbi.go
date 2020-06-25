@@ -34,6 +34,7 @@ type Six910DB interface {
 	AddStore(s *Store) (bool, int64)
 	UpdateStore(s *Store) bool
 	GetStore(sname string) *Store
+	GetLocalStore() *Store
 	GetStoreID(id int64) *Store
 	GetStoreCount() int64
 	GetStoreByLocal(localDomain string) *Store
