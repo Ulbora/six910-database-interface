@@ -341,7 +341,7 @@ type ShipmentItem struct {
 	Updated       time.Time `json:"updated"`
 	OrderItemID   int64     `json:"orderItemId"`
 	ShipmentBoxID int64     `json:"shipmentBoxId"`
-	ShipmentID    int64     `json:"shippingId"`
+	ShipmentID    int64     `json:"shipmentId"`
 }
 
 //Order Order
