@@ -192,7 +192,7 @@ type Six910DB interface {
 	UpdateShipmentItem(si *ShipmentItem) bool
 	GetShipmentItem(id int64) *ShipmentItem
 	GetShipmentItemList(shipmentID int64) *[]ShipmentItem
-	GetShipmentItemListByBox(boxNumber int64) *[]ShipmentItem
+	GetShipmentItemListByBox(boxNumber int64, shipmentID int64) *[]ShipmentItem
 	DeleteShipmentItem(id int64) bool
 
 	//Global Plugins
