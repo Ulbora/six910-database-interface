@@ -249,6 +249,9 @@ type Six910DB interface {
 	//Gets called before updating an instance
 	GetInstance(name string, dataStoreName string, storeID int64) *Instances
 
+	//Gets called before updating an instance or after to see if there are any instances left to update
+	GetInstanceList(dataStoreName string, storeID int64) *[]Instances
+
 	//-------------------start write lock-------------
 	//gets called after UI makes changes to one of the datastores
 	//If the datastore already exists, the Update method is called from within add
