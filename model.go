@@ -424,7 +424,6 @@ type Instances struct {
 
 //DataStoreWriteLock DataStoreWriteLock
 type DataStoreWriteLock struct {
-	ID                 int64     `json:"id"`
 	DataStoreName      string    `json:"dataStoreName"`
 	Locked             bool      `json:"locked"`
 	LockedInstanceName string    `json:"lockedInstanceName"`
