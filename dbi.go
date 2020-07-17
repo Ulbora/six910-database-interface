@@ -255,7 +255,7 @@ type Six910DB interface {
 	//-------------------start write lock-------------
 	//gets called after UI makes changes to one of the datastores
 	//If the datastore already exists, the Update method is called from within add
-	AddDataStoreWriteLock(w *DataStoreWriteLock) (bool, int64)
+	AddDataStoreWriteLock(w *DataStoreWriteLock) bool
 	UpdateDataStoreWriteLock(w *DataStoreWriteLock) bool
 
 	//gets called from within the add method and by any node trying to update a datastore
