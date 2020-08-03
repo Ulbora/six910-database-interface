@@ -178,6 +178,7 @@ type Product struct {
 	Price                 float64   `json:"price"`
 	SalePrice             float64   `json:"salePrice"`
 	Currency              string    `json:"currency"`
+	ManufacturerID        string    `json:"manufacturerId"`
 	Manufacturer          string    `json:"manufacturer"`
 	Stock                 int64     `json:"stock"`
 	StockAlert            int64     `json:"stockAlert"`
