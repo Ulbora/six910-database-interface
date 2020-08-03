@@ -108,7 +108,7 @@ type Six910DB interface {
 	AddProduct(p *Product) (bool, int64)
 	UpdateProduct(p *Product) bool
 	GetProductByID(id int64) *Product
-	GetProductBySku(sku string, distributorID int64, storeID int64)
+	GetProductBySku(sku string, distributorID int64, storeID int64) *Product
 	GetProductsByName(name string, storeID int64, start int64, end int64) *[]Product
 	GetProductsByCaterory(catID int64, start int64, end int64) *[]Product
 	GetProductList(storeID int64, start int64, end int64) *[]Product
