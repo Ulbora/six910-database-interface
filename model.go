@@ -190,7 +190,7 @@ type Product struct {
 	Visible               bool      `json:"visible"`
 	Searchable            bool      `json:"searchable"`
 	MultiBox              bool      `json:"multibox"`
-	ShipSeperately        bool      `json:"shipSeperately"`
+	ShipSeparately        bool      `json:"shipSeparately"`
 	FreeShipping          bool      `json:"freeShipping"`
 	Promoted              bool      `json:"promoted"`
 	Dropship              bool      `json:"dropship"`
