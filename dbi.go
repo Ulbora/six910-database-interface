@@ -158,7 +158,7 @@ type Six910DB interface {
 	GetOrder(id int64) *Order
 	GetOrderList(cid int64, storeID int64) *[]Order
 	GetStoreOrderList(storeID int64) *[]Order
-	GetStoreOrderListByStatus(status, storeID int64) *[]Order
+	GetStoreOrderListByStatus(status string, storeID int64) *[]Order
 	DeleteOrder(id int64) bool
 
 	//Order Items
