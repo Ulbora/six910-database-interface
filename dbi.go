@@ -110,6 +110,7 @@ type Six910DB interface {
 	GetProductByID(id int64) *Product
 	GetProductBySku(sku string, distributorID int64, storeID int64) *Product
 	GetProductsByName(name string, storeID int64, start int64, end int64) *[]Product
+	GetProductsByPromoted(storeID int64, start int64, end int64) *[]Product
 	GetProductsByCaterory(catID int64, start int64, end int64) *[]Product
 	GetProductList(storeID int64, start int64, end int64) *[]Product
 	DeleteProduct(id int64) bool
