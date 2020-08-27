@@ -117,8 +117,8 @@ type Six910DB interface {
 
 	AddTaxRate(t *TaxRate) (bool, int64)
 	UpdateTaxRate(t *TaxRate) bool
-	GetTaxRate(country string, state string, storeID int64) []*TaxRate
-	GetTaxRateList(storeID int64) []*TaxRate
+	GetTaxRate(country string, state string, storeID int64) *[]TaxRate
+	GetTaxRateList(storeID int64) *[]TaxRate
 	DeleteTaxRate(id int64) bool
 
 	//Geographic Regions
