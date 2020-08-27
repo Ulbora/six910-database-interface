@@ -210,6 +210,21 @@ type Product struct {
 	DateUpdated           time.Time `json:"updated"`
 }
 
+//TaxRate TaxRate
+type TaxRate struct {
+	ID                int64  `json:"id"`
+	Country           string `json:"country"`
+	State             string `json:"state"`
+	ZipStart          string `json:"zipStart"`
+	ZipEnd            string `json:"zipEnd"`
+	PercentRate       int64  `json:"percentRate"`
+	ProductCategoryID int64  `json:"productCategoryId"`
+	IncludeHandling   bool   `json:"includeHandling"`
+	IncludeShipping   bool   `json:"includeShipping"`
+	TaxType           string `json:"taxType"`
+	StoreID           int64  `json:"storeId"`
+}
+
 //Region Region
 type Region struct {
 	ID         int64  `json:"id"`

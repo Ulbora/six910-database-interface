@@ -115,6 +115,12 @@ type Six910DB interface {
 	GetProductList(storeID int64, start int64, end int64) *[]Product
 	DeleteProduct(id int64) bool
 
+	AddTaxRate(t *TaxRate) (bool, int64)
+	UpdateTaxRate(t *TaxRate) bool
+	GetTaxRate(country string, state string, storeID int64) []*TaxRate
+	GetTaxRateList(storeID int64) []*TaxRate
+	DeleteTaxRate(id int64) bool
+
 	//Geographic Regions
 	AddRegion(r *Region) (bool, int64)
 	UpdateRegion(r *Region) bool
