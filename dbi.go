@@ -86,6 +86,7 @@ type Six910DB interface {
 	AddCategory(c *Category) (bool, int64)
 	UpdateCategory(c *Category) bool
 	GetCategory(id int64) *Category
+	GetHierarchicalCategoryList(storeID int64) *[]Category
 	GetCategoryList(storeID int64) *[]Category
 	GetSubCategoryList(catID int64) *[]Category
 	DeleteCategory(id int64) bool
