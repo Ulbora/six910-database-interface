@@ -158,6 +158,7 @@ type Six910DB interface {
 
 	//product category
 	AddProductCategory(pc *ProductCategory) bool
+	GetProductCategoryList(productID int64) *[]int64
 	DeleteProductCategory(pc *ProductCategory) bool
 
 	//Orders
