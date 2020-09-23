@@ -371,6 +371,7 @@ type Order struct {
 	Insurance          float64   `json:"insurance"`
 	Taxes              float64   `json:"taxes"`
 	Total              float64   `json:"total"`
+	Refunded           float64   `json:"refunded"`
 	OrderNumber        string    `json:"orderNumber"`
 	OrderType          string    `json:"orderType"`
 	Pickup             bool      `json:"pickup"`
