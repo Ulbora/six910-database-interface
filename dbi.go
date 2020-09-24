@@ -45,7 +45,7 @@ type Six910DB interface {
 	UpdateCustomer(c *Customer) bool
 	GetCustomer(email string, storeID int64) *Customer
 	GetCustomerID(id int64) *Customer
-	GetCustomerList(storeID int64) *[]Customer
+	GetCustomerList(storeID int64, start int64, end int64) *[]Customer
 	DeleteCustomer(id int64) bool
 
 	//Local Accounts when oauth not used
