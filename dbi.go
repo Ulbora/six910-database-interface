@@ -116,6 +116,14 @@ type Six910DB interface {
 	GetProductList(storeID int64, start int64, end int64) *[]Product
 	DeleteProduct(id int64) bool
 
+	//product search
+	GetProductManufacturerListByProductName(name string, storeID int64) *[]string
+	GetProductByNameAndManufacturerName(manf string, name string, storeID int64,
+		start int64, end int64) *[]Product
+	GetProductManufacturerListByCatID(catID int64, storeID int64) *[]string
+	GetProductByCatAndManufacturer(catID int64, manf string, storeID int64,
+		start int64, end int64) *[]Product
+
 	AddTaxRate(t *TaxRate) (bool, int64)
 	UpdateTaxRate(t *TaxRate) bool
 	GetTaxRate(country string, state string, storeID int64) *[]TaxRate
