@@ -389,14 +389,17 @@ type Order struct {
 
 //OrderItem OrderItem
 type OrderItem struct {
-	ID               int64  `json:"id"`
-	Quantity         int64  `json:"quantity"`
-	BackOrdered      bool   `json:"backOrdered"`
-	Dropship         bool   `json:"dropship"`
-	ProductName      string `json:"productName"`
-	ProductShortDesc string `json:"productShortDesc"`
-	ProductID        int64  `json:"productId"`
-	OrderID          int64  `json:"orderId"`
+	ID               int64   `json:"id"`
+	Quantity         int64   `json:"quantity"`
+	BackOrdered      bool    `json:"backOrdered"`
+	Dropship         bool    `json:"dropship"`
+	ProductName      string  `json:"productName"`
+	ProductShortDesc string  `json:"productShortDesc"`
+	ProductID        int64   `json:"productId"`
+	OrderID          int64   `json:"orderId"`
+	Price            float64 `json:"price"`
+	Total            float64 `json:"total"`
+	Image            string  `json:"image"`
 }
 
 //OrderComment OrderComment
