@@ -387,6 +387,18 @@ type Order struct {
 	StoreID            int64     `json:"storeId"`
 }
 
+//OrderCountData OrderCountData
+type OrderCountData struct {
+	OrderDate  time.Time `json:"orderDate"`
+	OrderCount int64     `json:"orderCount"`
+}
+
+//OrderSalesData OrderSalesData
+type OrderSalesData struct {
+	OrderDate  time.Time `json:"orderDate"`
+	OrderTotal float64   `json:"orderTotal"`
+}
+
 //OrderItem OrderItem
 type OrderItem struct {
 	ID               int64   `json:"id"`
@@ -452,4 +464,20 @@ type DataStoreWriteLock struct {
 	LockedTime         time.Time `json:"lockedTime"`
 	LockedByUser       string    `json:"lockedByUser"`
 	StoreID            int64     `json:"storeId"`
+}
+
+//VisitorData VisitorData
+type VisitorData struct {
+	VisitDate  time.Time `json:"visitDate"`
+	VisitCount int64     `json:"visitCount"`
+}
+
+//Visitor Visitor
+type Visitor struct {
+	ID          int64     `json:"id"`
+	Origin      string    `json:"origin"`
+	Host        string    `json:"host"`
+	IPAddress   string    `json:"ipAddress"`
+	DateEntered time.Time `json:"dateEntered"`
+	StoreID     int64     `json:"storeId"`
 }

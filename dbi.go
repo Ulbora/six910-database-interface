@@ -115,6 +115,8 @@ type Six910DB interface {
 	GetProductsByPromoted(storeID int64, start int64, end int64) *[]Product
 	GetProductsByCaterory(catID int64, start int64, end int64) *[]Product
 	GetProductList(storeID int64, start int64, end int64) *[]Product
+	GetProductIDList(storeID int64) *[]int64
+	GetProductIDListByCategories(storeID int64, catList *[]int64) *[]int64
 	DeleteProduct(id int64) bool
 
 	//product search
@@ -177,7 +179,13 @@ type Six910DB interface {
 	GetOrderList(cid int64, storeID int64) *[]Order
 	GetStoreOrderList(storeID int64) *[]Order
 	GetStoreOrderListByStatus(status string, storeID int64) *[]Order
+	GetOrderCountData(storeID int64) *[]OrderCountData
+	GetOrderSalesData(storeID int64) *[]OrderSalesData
 	DeleteOrder(id int64) bool
+
+	//Visitors
+	AddVisit(v *Visitor) bool
+	GetVisitorData(storeID int64) *[]VisitorData
 
 	//Order Items
 	AddOrderItem(i *OrderItem) (bool, int64)
