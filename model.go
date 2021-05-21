@@ -310,12 +310,14 @@ type StorePlugins struct {
 //PaymentGateway PaymentGateway
 type PaymentGateway struct {
 	ID             int64  `json:"id"`
+	Name           string `json:"name"`
 	CheckoutURL    string `json:"checkoutUrl"`
 	PostOrderURL   string `json:"postOrderUrl"`
 	LogoURL        string `json:"logoUrl"`
 	ClientID       string `json:"clientId"`
 	ClientKey      string `json:"clientKey"`
 	StorePluginsID int64  `json:"storePluginsId"`
+	Token          string `json:"token"`
 }
 
 //Shipment Shipment

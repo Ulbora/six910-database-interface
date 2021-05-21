@@ -243,6 +243,7 @@ type Six910DB interface {
 	AddPaymentGateway(pgw *PaymentGateway) (bool, int64)
 	UpdatePaymentGateway(pgw *PaymentGateway) bool
 	GetPaymentGateway(id int64) *PaymentGateway
+	GetPaymentGatewayByName(name string) *PaymentGateway
 	GetPaymentGateways(storeID int64) *[]PaymentGateway
 	DeletePaymentGateway(id int64) bool
 
