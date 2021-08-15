@@ -119,6 +119,10 @@ type Address struct {
 	Country    string `json:"country"`
 	Type       string `json:"type"`
 	CustomerID int64  `json:"customerId"`
+	Attr1      string `json:"attr1"`
+	Attr2      string `json:"attr2"`
+	Attr3      string `json:"attr3"`
+	Attr4      string `json:"attr4"`
 }
 
 //Category Category
