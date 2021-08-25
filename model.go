@@ -368,29 +368,31 @@ type ShipmentItem struct {
 
 //Order Order
 type Order struct {
-	ID                 int64     `json:"id"`
-	OrderDate          time.Time `json:"orderDate"`
-	Updated            time.Time `json:"updated"`
-	Status             string    `json:"status"`
-	Subtotal           float64   `json:"subTotal"`
-	ShippingHandling   float64   `json:"shippingHandling"`
-	Insurance          float64   `json:"insurance"`
-	Taxes              float64   `json:"taxes"`
-	Total              float64   `json:"total"`
-	Refunded           float64   `json:"refunded"`
-	OrderNumber        string    `json:"orderNumber"`
-	OrderType          string    `json:"orderType"`
-	Pickup             bool      `json:"pickup"`
-	Username           string    `json:"username"`
-	CustomerName       string    `json:"customerName"`
-	CustomerID         int64     `json:"customerId"`
-	BillingAddress     string    `json:"billingAddress"`
-	BillingAddressID   int64     `json:"billingAddressId"`
-	ShippingAddress    string    `json:"shippingAddress"`
-	ShippingAddressID  int64     `json:"shippingAddressId"`
-	ShippingMethodID   int64     `json:"shippingMethodId"`
-	ShippingMethodName string    `json:"shippingMethodName"`
-	StoreID            int64     `json:"storeId"`
+	ID                   int64     `json:"id"`
+	OrderDate            time.Time `json:"orderDate"`
+	Updated              time.Time `json:"updated"`
+	Status               string    `json:"status"`
+	Subtotal             float64   `json:"subTotal"`
+	ShippingHandling     float64   `json:"shippingHandling"`
+	Insurance            float64   `json:"insurance"`
+	Taxes                float64   `json:"taxes"`
+	Total                float64   `json:"total"`
+	Refunded             float64   `json:"refunded"`
+	OrderNumber          string    `json:"orderNumber"`
+	OrderType            string    `json:"orderType"`
+	Pickup               bool      `json:"pickup"`
+	Username             string    `json:"username"`
+	CustomerName         string    `json:"customerName"`
+	CustomerID           int64     `json:"customerId"`
+	BillingAddress       string    `json:"billingAddress"`
+	BillingAddressID     int64     `json:"billingAddressId"`
+	ShippingAddress      string    `json:"shippingAddress"`
+	ShippingAddressID    int64     `json:"shippingAddressId"`
+	FFLShippingAddress   string    `json:"fflShippingAddress"`
+	FFLShippingAddressID int64     `json:"fflShippingAddressId"`
+	ShippingMethodID     int64     `json:"shippingMethodId"`
+	ShippingMethodName   string    `json:"shippingMethodName"`
+	StoreID              int64     `json:"storeId"`
 }
 
 //OrderCountData OrderCountData
