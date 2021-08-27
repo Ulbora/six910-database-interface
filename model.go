@@ -390,6 +390,10 @@ type Order struct {
 	ShippingAddressID    int64     `json:"shippingAddressId"`
 	FFLShippingAddress   string    `json:"fflShippingAddress"`
 	FFLShippingAddressID int64     `json:"fflShippingAddressId"`
+	FFLName              string    `json:"fflName"`
+	FFLLic               string    `json:"fflLic"`
+	FFLExpDate           string    `json:"fflExpDate"`
+	FFLPhone             string    `json:"fflPhone"`
 	ShippingMethodID     int64     `json:"shippingMethodId"`
 	ShippingMethodName   string    `json:"shippingMethodName"`
 	StoreID              int64     `json:"storeId"`
