@@ -118,7 +118,16 @@ type Six910DB interface {
 	GetProductList(storeID int64, start int64, end int64) *[]Product
 	GetProductIDList(storeID int64) *[]int64
 	GetProductIDListByCategories(storeID int64, catList *[]int64) *[]int64
+	GetProductSubSkuList(parentProdID int64) *[]Product
 	DeleteProduct(id int64) bool
+
+	// //product sub sku
+	// AddProductSubSku(p *ProductSubSku) (bool, int64)
+	// UpdateProductSubSku(p *ProductSubSku) bool
+	// UpdateProductSubSkuQuantity(p *ProductSubSku) bool
+	// GetProductSubSkuByID(id int64) *ProductSubSku
+	// GetProductSubSkuList(prodID int64) *[]ProductSubSku
+	// DeleteProductSubSku(id int64) bool
 
 	//product search
 	GetProductManufacturerListByProductName(name string, storeID int64) *[]string

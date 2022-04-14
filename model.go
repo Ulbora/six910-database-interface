@@ -215,28 +215,28 @@ type Product struct {
 	HasSubSkus            bool      `json:"hasSubSkus"`
 }
 
-//ProductSubSku ProductSubSku
-type ProductSubSku struct {
-	ID        int64   `json:"id"`
-	ProductID int64   `json:"productId"`
-	SubSku    string  `json:"subSku"`
-	Stock     int64   `json:"stock"`
-	Size      string  `json:"size"`
-	Color     string  `json:"color"`
-	Weight    float64 `json:"weight"`
-	Width     float64 `json:"width"`
-	Height    float64 `json:"height"`
-	Depth     float64 `json:"depth"`
-	Cost      float64 `json:"cost"`
-	Msrp      float64 `json:"msrp"`
-	Map       float64 `json:"map"`
-	Price     float64 `json:"price"`
-	SalePrice float64 `json:"salePrice"`
-	Image1    string  `json:"image1"`
-	Image2    string  `json:"image2"`
-	Image3    string  `json:"image3"`
-	Image4    string  `json:"image4"`
-}
+// //ProductSubSku ProductSubSku
+// type ProductSubSku struct {
+// 	ID        int64   `json:"id"`
+// 	ProductID int64   `json:"productId"`
+// 	SubSku    string  `json:"subSku"`
+// 	Stock     int64   `json:"stock"`
+// 	Size      string  `json:"size"`
+// 	Color     string  `json:"color"`
+// 	Weight    float64 `json:"weight"`
+// 	Width     float64 `json:"width"`
+// 	Height    float64 `json:"height"`
+// 	Depth     float64 `json:"depth"`
+// 	Cost      float64 `json:"cost"`
+// 	Msrp      float64 `json:"msrp"`
+// 	Map       float64 `json:"map"`
+// 	Price     float64 `json:"price"`
+// 	SalePrice float64 `json:"salePrice"`
+// 	Image1    string  `json:"image1"`
+// 	Image2    string  `json:"image2"`
+// 	Image3    string  `json:"image3"`
+// 	Image4    string  `json:"image4"`
+// }
 
 //TaxRate TaxRate
 type TaxRate struct {
