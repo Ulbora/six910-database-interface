@@ -212,7 +212,6 @@ type Product struct {
 	ParentProductID       int64     `json:"parentProductId"`
 	DateEntered           time.Time `json:"entered"`
 	DateUpdated           time.Time `json:"updated"`
-	SubSku                bool      `json:"subSku"`
 }
 
 // //ProductSubSku ProductSubSku
