@@ -517,3 +517,13 @@ type Visitor struct {
 	DateEntered time.Time `json:"dateEntered"`
 	StoreID     int64     `json:"storeId"`
 }
+
+//ProductSearch ProductSearch
+type ProductSearch struct {
+	StoreID        int64     `json:"storeId"`
+	ProductID      int64     `json:"productId"`
+	Size           string    `json:"size"`
+	Gender         string    `json:"gender"`
+	Color          string    `json:"color"`
+	DescAttributes *[]string `json:"descAttributes"`
+}
