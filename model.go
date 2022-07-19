@@ -527,4 +527,6 @@ type ProductSearch struct {
 	Gender         string    `json:"gender"`
 	Color          string    `json:"color"`
 	DescAttributes *[]string `json:"descAttributes"`
+	Start          int64     `json:"start"`
+	End            int64     `json:"end"`
 }
