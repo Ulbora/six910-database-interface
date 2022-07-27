@@ -132,6 +132,7 @@ type Six910DB interface {
 
 	//product search
 	GetProductManufacturerListByProductName(name string, storeID int64) *[]string
+	GetProductManufacturerListByProductSearch(attrs string, storeID int64) *[]string
 	GetProductByNameAndManufacturerName(manf string, name string, storeID int64,
 		start int64, end int64) *[]Product
 	GetProductManufacturerListByCatID(catID int64, storeID int64) *[]string
